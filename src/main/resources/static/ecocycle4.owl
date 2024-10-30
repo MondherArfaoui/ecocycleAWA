@@ -1,0 +1,1245 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY xml "http://www.w3.org/XML/1998/namespace" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY untitled-ontology-7 "http://www.semanticweb.org/arfao/ontologies/2024/8/untitled-ontology-7#" >
+]>
+
+
+<rdf:RDF xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://www.w3.org/2002/07/owl"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:untitled-ontology-7="http://www.semanticweb.org/arfao/ontologies/2024/8/untitled-ontology-7#">
+    <Ontology rdf:about="http://www.semanticweb.org/arfao/ontologies/2024/8/untitled-ontology-7"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/arfao/ontologies/2024/8/untitled-ontology-7#créeComptePour -->
+
+    <ObjectProperty rdf:about="&untitled-ontology-7;créeComptePour">
+        <rdfs:domain rdf:resource="&untitled-ontology-7;Admin"/>
+        <rdfs:range rdf:resource="&untitled-ontology-7;AdminCentreCollecte"/>
+        <rdfs:range rdf:resource="&untitled-ontology-7;AdminCentreRecyclage"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/arfao/ontologies/2024/8/untitled-ontology-7#estCollectePar -->
+
+    <ObjectProperty rdf:about="&untitled-ontology-7;estCollectePar">
+        <rdfs:range rdf:resource="&untitled-ontology-7;CentreCollecte"/>
+        <rdfs:domain rdf:resource="&untitled-ontology-7;Dechet"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/arfao/ontologies/2024/8/untitled-ontology-7#estProduitPar -->
+
+    <ObjectProperty rdf:about="&untitled-ontology-7;estProduitPar">
+        <rdfs:range rdf:resource="&untitled-ontology-7;CentreRecyclage"/>
+        <rdfs:domain rdf:resource="&untitled-ontology-7;MatierePremiere"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/arfao/ontologies/2024/8/untitled-ontology-7#estTypeDechetDe -->
+
+    <ObjectProperty rdf:about="&untitled-ontology-7;estTypeDechetDe">
+        <rdfs:range rdf:resource="&untitled-ontology-7;Dechet"/>
+        <rdfs:domain rdf:resource="&untitled-ontology-7;TypeDechet"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/arfao/ontologies/2024/8/untitled-ontology-7#estTypeRecyclageDe -->
+
+    <ObjectProperty rdf:about="&untitled-ontology-7;estTypeRecyclageDe">
+        <rdfs:range rdf:resource="&untitled-ontology-7;MatierePremiere"/>
+        <rdfs:domain rdf:resource="&untitled-ontology-7;TypeRecyclage"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/arfao/ontologies/2024/8/untitled-ontology-7#faitCommentaireSur -->
+
+    <ObjectProperty rdf:about="&untitled-ontology-7;faitCommentaireSur">
+        <rdfs:domain rdf:resource="&untitled-ontology-7;Commentaire"/>
+        <rdfs:range rdf:resource="&untitled-ontology-7;EvenementCommunautaire"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/arfao/ontologies/2024/8/untitled-ontology-7#gèreCentreCollecte -->
+
+    <ObjectProperty rdf:about="&untitled-ontology-7;gèreCentreCollecte">
+        <rdfs:domain rdf:resource="&untitled-ontology-7;AdminCentreCollecte"/>
+        <rdfs:range rdf:resource="&untitled-ontology-7;CentreCollecte"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/arfao/ontologies/2024/8/untitled-ontology-7#gèreCentreRecyclage -->
+
+    <ObjectProperty rdf:about="&untitled-ontology-7;gèreCentreRecyclage">
+        <rdfs:domain rdf:resource="&untitled-ontology-7;AdminCentreRecyclage"/>
+        <rdfs:range rdf:resource="&untitled-ontology-7;CentreRecyclage"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/arfao/ontologies/2024/8/untitled-ontology-7#gèreDechet -->
+
+    <ObjectProperty rdf:about="&untitled-ontology-7;gèreDechet">
+        <rdfs:domain rdf:resource="&untitled-ontology-7;AdminCentreCollecte"/>
+        <rdfs:range rdf:resource="&untitled-ontology-7;Dechet"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/arfao/ontologies/2024/8/untitled-ontology-7#gèreMatierePremiere -->
+
+    <ObjectProperty rdf:about="&untitled-ontology-7;gèreMatierePremiere">
+        <rdfs:domain rdf:resource="&untitled-ontology-7;AdminCentreRecyclage"/>
+        <rdfs:range rdf:resource="&untitled-ontology-7;MatierePremiere"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/arfao/ontologies/2024/8/untitled-ontology-7#gèreTypeDechet -->
+
+    <ObjectProperty rdf:about="&untitled-ontology-7;gèreTypeDechet">
+        <rdfs:domain rdf:resource="&untitled-ontology-7;AdminCentreCollecte"/>
+        <rdfs:range rdf:resource="&untitled-ontology-7;TypeDechet"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/arfao/ontologies/2024/8/untitled-ontology-7#gèreTypeRecyclage -->
+
+    <ObjectProperty rdf:about="&untitled-ontology-7;gèreTypeRecyclage">
+        <rdfs:domain rdf:resource="&untitled-ontology-7;AdminCentreRecyclage"/>
+        <rdfs:range rdf:resource="&untitled-ontology-7;TypeRecyclage"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/arfao/ontologies/2024/8/untitled-ontology-7#gèreZoneCollecte -->
+
+    <ObjectProperty rdf:about="&untitled-ontology-7;gèreZoneCollecte">
+        <rdfs:domain rdf:resource="&untitled-ontology-7;Admin"/>
+        <rdfs:range rdf:resource="&untitled-ontology-7;ZoneCollecte"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/arfao/ontologies/2024/8/untitled-ontology-7#localiseDans -->
+
+    <ObjectProperty rdf:about="&untitled-ontology-7;localiseDans">
+        <rdfs:domain rdf:resource="&untitled-ontology-7;CentreCollecte"/>
+        <rdfs:range rdf:resource="&untitled-ontology-7;ZoneCollecte"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/arfao/ontologies/2024/8/untitled-ontology-7#organiseEvenement -->
+
+    <ObjectProperty rdf:about="&untitled-ontology-7;organiseEvenement">
+        <rdfs:domain rdf:resource="&untitled-ontology-7;Admin"/>
+        <rdfs:range rdf:resource="&untitled-ontology-7;EvenementCommunautaire"/>
+    </ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/arfao/ontologies/2024/8/untitled-ontology-7#adresse -->
+
+    <DatatypeProperty rdf:about="&untitled-ontology-7;adresse">
+        <rdfs:domain rdf:resource="&untitled-ontology-7;ZoneCollecte"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/arfao/ontologies/2024/8/untitled-ontology-7#capacite -->
+
+    <DatatypeProperty rdf:about="&untitled-ontology-7;capacite">
+        <rdfs:domain rdf:resource="&untitled-ontology-7;CentreCollecte"/>
+        <rdfs:domain rdf:resource="&untitled-ontology-7;CentreRecyclage"/>
+        <rdfs:range rdf:resource="&xsd;int"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/arfao/ontologies/2024/8/untitled-ontology-7#dangereux -->
+
+    <DatatypeProperty rdf:about="&untitled-ontology-7;dangereux">
+        <rdfs:domain rdf:resource="&untitled-ontology-7;TypeDechet"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/arfao/ontologies/2024/8/untitled-ontology-7#date -->
+
+    <DatatypeProperty rdf:about="&untitled-ontology-7;date">
+        <rdfs:domain rdf:resource="&untitled-ontology-7;EvenementCommunautaire"/>
+        <rdfs:range rdf:resource="&xsd;dateTime"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/arfao/ontologies/2024/8/untitled-ontology-7#description -->
+
+    <DatatypeProperty rdf:about="&untitled-ontology-7;description">
+        <rdfs:domain rdf:resource="&untitled-ontology-7;EvenementCommunautaire"/>
+        <rdfs:domain rdf:resource="&untitled-ontology-7;TypeDechet"/>
+        <rdfs:domain rdf:resource="&untitled-ontology-7;TypeRecyclage"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/arfao/ontologies/2024/8/untitled-ontology-7#email -->
+
+    <DatatypeProperty rdf:about="&untitled-ontology-7;email">
+        <rdfs:domain rdf:resource="&untitled-ontology-7;User"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/arfao/ontologies/2024/8/untitled-ontology-7#matricule -->
+
+    <DatatypeProperty rdf:about="&untitled-ontology-7;matricule">
+        <rdfs:domain rdf:resource="&untitled-ontology-7;AdminCentreCollecte"/>
+        <rdfs:domain rdf:resource="&untitled-ontology-7;AdminCentreRecyclage"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/arfao/ontologies/2024/8/untitled-ontology-7#nom -->
+
+    <DatatypeProperty rdf:about="&untitled-ontology-7;nom">
+        <rdfs:domain rdf:resource="&untitled-ontology-7;Admin"/>
+        <rdfs:domain rdf:resource="&untitled-ontology-7;AdminCentreCollecte"/>
+        <rdfs:domain rdf:resource="&untitled-ontology-7;AdminCentreRecyclage"/>
+        <rdfs:domain rdf:resource="&untitled-ontology-7;EvenementCommunautaire"/>
+        <rdfs:domain rdf:resource="&untitled-ontology-7;MatierePremiere"/>
+        <rdfs:domain rdf:resource="&untitled-ontology-7;TypeDechet"/>
+        <rdfs:domain rdf:resource="&untitled-ontology-7;TypeRecyclage"/>
+        <rdfs:domain rdf:resource="&untitled-ontology-7;User"/>
+        <rdfs:domain rdf:resource="&untitled-ontology-7;ZoneCollecte"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/arfao/ontologies/2024/8/untitled-ontology-7#password -->
+
+    <DatatypeProperty rdf:about="&untitled-ontology-7;password">
+        <rdfs:domain rdf:resource="&untitled-ontology-7;User"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/arfao/ontologies/2024/8/untitled-ontology-7#quantite -->
+
+    <DatatypeProperty rdf:about="&untitled-ontology-7;quantite">
+        <rdfs:domain rdf:resource="&untitled-ontology-7;MatierePremiere"/>
+        <rdfs:range rdf:resource="&xsd;int"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/arfao/ontologies/2024/8/untitled-ontology-7#recyclable -->
+
+    <DatatypeProperty rdf:about="&untitled-ontology-7;recyclable">
+        <rdfs:domain rdf:resource="&untitled-ontology-7;TypeDechet"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/arfao/ontologies/2024/8/untitled-ontology-7#role -->
+
+    <DatatypeProperty rdf:about="&untitled-ontology-7;role">
+        <rdfs:domain rdf:resource="&untitled-ontology-7;User"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/arfao/ontologies/2024/8/untitled-ontology-7#telephone -->
+
+    <DatatypeProperty rdf:about="&untitled-ontology-7;telephone">
+        <rdfs:domain rdf:resource="&untitled-ontology-7;AdminCentreCollecte"/>
+        <rdfs:domain rdf:resource="&untitled-ontology-7;AdminCentreRecyclage"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/arfao/ontologies/2024/8/untitled-ontology-7#Admin -->
+
+    <Class rdf:about="&untitled-ontology-7;Admin">
+        <equivalentClass>
+            <Restriction>
+                <onProperty rdf:resource="&untitled-ontology-7;créeComptePour"/>
+                <onClass rdf:resource="&untitled-ontology-7;AdminCentreRecyclage"/>
+                <minQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</minQualifiedCardinality>
+            </Restriction>
+        </equivalentClass>
+        <equivalentClass>
+            <Restriction>
+                <onProperty rdf:resource="&untitled-ontology-7;créeComptePour"/>
+                <onClass rdf:resource="&untitled-ontology-7;AdminCentreCollecte"/>
+                <minQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</minQualifiedCardinality>
+            </Restriction>
+        </equivalentClass>
+        <equivalentClass>
+            <Restriction>
+                <onProperty rdf:resource="&untitled-ontology-7;organiseEvenement"/>
+                <onClass rdf:resource="&untitled-ontology-7;EvenementCommunautaire"/>
+                <minQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</minQualifiedCardinality>
+            </Restriction>
+        </equivalentClass>
+        <equivalentClass>
+            <Restriction>
+                <onProperty rdf:resource="&untitled-ontology-7;gèreZoneCollecte"/>
+                <onClass rdf:resource="&untitled-ontology-7;ZoneCollecte"/>
+                <minQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</minQualifiedCardinality>
+            </Restriction>
+        </equivalentClass>
+        <rdfs:subClassOf rdf:resource="&untitled-ontology-7;User"/>
+    </Class>
+    
+
+
+    <!-- http://www.semanticweb.org/arfao/ontologies/2024/8/untitled-ontology-7#AdminCentreCollecte -->
+
+    <Class rdf:about="&untitled-ontology-7;AdminCentreCollecte">
+        <equivalentClass>
+            <Restriction>
+                <onProperty rdf:resource="&untitled-ontology-7;gèreCentreCollecte"/>
+                <onClass rdf:resource="&untitled-ontology-7;CentreCollecte"/>
+                <qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</qualifiedCardinality>
+            </Restriction>
+        </equivalentClass>
+        <equivalentClass>
+            <Restriction>
+                <onProperty rdf:resource="&untitled-ontology-7;gèreTypeDechet"/>
+                <onClass rdf:resource="&untitled-ontology-7;TypeDechet"/>
+                <minQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</minQualifiedCardinality>
+            </Restriction>
+        </equivalentClass>
+        <equivalentClass>
+            <Restriction>
+                <onProperty rdf:resource="&untitled-ontology-7;gèreDechet"/>
+                <onClass rdf:resource="&untitled-ontology-7;Dechet"/>
+                <minQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</minQualifiedCardinality>
+            </Restriction>
+        </equivalentClass>
+        <rdfs:subClassOf rdf:resource="&untitled-ontology-7;User"/>
+    </Class>
+    
+
+
+    <!-- http://www.semanticweb.org/arfao/ontologies/2024/8/untitled-ontology-7#AdminCentreRecyclage -->
+
+    <Class rdf:about="&untitled-ontology-7;AdminCentreRecyclage">
+        <equivalentClass>
+            <Restriction>
+                <onProperty rdf:resource="&untitled-ontology-7;gèreMatierePremiere"/>
+                <onClass rdf:resource="&untitled-ontology-7;MatierePremiere"/>
+                <minQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</minQualifiedCardinality>
+            </Restriction>
+        </equivalentClass>
+        <equivalentClass>
+            <Restriction>
+                <onProperty rdf:resource="&untitled-ontology-7;gèreTypeRecyclage"/>
+                <onClass rdf:resource="&untitled-ontology-7;TypeRecyclage"/>
+                <minQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</minQualifiedCardinality>
+            </Restriction>
+        </equivalentClass>
+        <equivalentClass>
+            <Restriction>
+                <onProperty rdf:resource="&untitled-ontology-7;gèreCentreRecyclage"/>
+                <onClass rdf:resource="&untitled-ontology-7;CentreRecyclage"/>
+                <qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</qualifiedCardinality>
+            </Restriction>
+        </equivalentClass>
+        <rdfs:subClassOf rdf:resource="&untitled-ontology-7;User"/>
+    </Class>
+    
+
+
+    <!-- http://www.semanticweb.org/arfao/ontologies/2024/8/untitled-ontology-7#CentreCollecte -->
+
+    <Class rdf:about="&untitled-ontology-7;CentreCollecte">
+        <equivalentClass>
+            <Restriction>
+                <onProperty rdf:resource="&untitled-ontology-7;localiseDans"/>
+                <onClass rdf:resource="&untitled-ontology-7;ZoneCollecte"/>
+                <qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</qualifiedCardinality>
+            </Restriction>
+        </equivalentClass>
+    </Class>
+    
+
+
+    <!-- http://www.semanticweb.org/arfao/ontologies/2024/8/untitled-ontology-7#CentreRecyclage -->
+
+    <Class rdf:about="&untitled-ontology-7;CentreRecyclage"/>
+    
+
+
+    <!-- http://www.semanticweb.org/arfao/ontologies/2024/8/untitled-ontology-7#Commentaire -->
+
+    <Class rdf:about="&untitled-ontology-7;Commentaire">
+        <equivalentClass>
+            <Restriction>
+                <onProperty rdf:resource="&untitled-ontology-7;faitCommentaireSur"/>
+                <onClass rdf:resource="&untitled-ontology-7;EvenementCommunautaire"/>
+                <qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</qualifiedCardinality>
+            </Restriction>
+        </equivalentClass>
+    </Class>
+    
+
+
+    <!-- http://www.semanticweb.org/arfao/ontologies/2024/8/untitled-ontology-7#Dechet -->
+
+    <Class rdf:about="&untitled-ontology-7;Dechet">
+        <equivalentClass>
+            <Restriction>
+                <onProperty rdf:resource="&untitled-ontology-7;estCollectePar"/>
+                <onClass rdf:resource="&untitled-ontology-7;CentreCollecte"/>
+                <qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</qualifiedCardinality>
+            </Restriction>
+        </equivalentClass>
+    </Class>
+    
+
+
+    <!-- http://www.semanticweb.org/arfao/ontologies/2024/8/untitled-ontology-7#EvenementCommunautaire -->
+
+    <Class rdf:about="&untitled-ontology-7;EvenementCommunautaire"/>
+    
+
+
+    <!-- http://www.semanticweb.org/arfao/ontologies/2024/8/untitled-ontology-7#MatierePremiere -->
+
+    <Class rdf:about="&untitled-ontology-7;MatierePremiere">
+        <equivalentClass>
+            <Restriction>
+                <onProperty rdf:resource="&untitled-ontology-7;estProduitPar"/>
+                <onClass rdf:resource="&untitled-ontology-7;CentreRecyclage"/>
+                <qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</qualifiedCardinality>
+            </Restriction>
+        </equivalentClass>
+    </Class>
+    
+
+
+    <!-- http://www.semanticweb.org/arfao/ontologies/2024/8/untitled-ontology-7#TypeDechet -->
+
+    <Class rdf:about="&untitled-ontology-7;TypeDechet">
+        <equivalentClass>
+            <Restriction>
+                <onProperty rdf:resource="&untitled-ontology-7;estTypeDechetDe"/>
+                <onClass rdf:resource="&untitled-ontology-7;Dechet"/>
+                <minQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</minQualifiedCardinality>
+            </Restriction>
+        </equivalentClass>
+    </Class>
+    
+
+
+    <!-- http://www.semanticweb.org/arfao/ontologies/2024/8/untitled-ontology-7#TypeRecyclage -->
+
+    <Class rdf:about="&untitled-ontology-7;TypeRecyclage">
+        <equivalentClass>
+            <Restriction>
+                <onProperty rdf:resource="&untitled-ontology-7;estTypeRecyclageDe"/>
+                <onClass rdf:resource="&untitled-ontology-7;MatierePremiere"/>
+                <minQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</minQualifiedCardinality>
+            </Restriction>
+        </equivalentClass>
+    </Class>
+    
+
+
+    <!-- http://www.semanticweb.org/arfao/ontologies/2024/8/untitled-ontology-7#User -->
+
+    <Class rdf:about="&untitled-ontology-7;User"/>
+    
+
+
+    <!-- http://www.semanticweb.org/arfao/ontologies/2024/8/untitled-ontology-7#ZoneCollecte -->
+
+    <Class rdf:about="&untitled-ontology-7;ZoneCollecte"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/arfao/ontologies/2024/8/untitled-ontology-7#Acier_Recyclé -->
+
+    <NamedIndividual rdf:about="&untitled-ontology-7;Acier_Recyclé">
+        <rdf:type rdf:resource="&untitled-ontology-7;MatierePremiere"/>
+        <untitled-ontology-7:nom>Acier Recyclé</untitled-ontology-7:nom>
+        <untitled-ontology-7:quantite>75000</untitled-ontology-7:quantite>
+        <untitled-ontology-7:estProduitPar rdf:resource="&untitled-ontology-7;Centre_Recyclage_01"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/arfao/ontologies/2024/8/untitled-ontology-7#Admin_EcoCycle -->
+
+    <NamedIndividual rdf:about="&untitled-ontology-7;Admin_EcoCycle">
+        <rdf:type rdf:resource="&untitled-ontology-7;Admin"/>
+        <rdf:type rdf:resource="&untitled-ontology-7;User"/>
+        <untitled-ontology-7:role>admin</untitled-ontology-7:role>
+        <untitled-ontology-7:nom>Admin EcoCycle</untitled-ontology-7:nom>
+        <untitled-ontology-7:password>adminecocycle</untitled-ontology-7:password>
+        <untitled-ontology-7:email>admin@ecocycle.com</untitled-ontology-7:email>
+        <untitled-ontology-7:gèreZoneCollecte rdf:resource="&untitled-ontology-7;Ariana"/>
+        <untitled-ontology-7:gèreZoneCollecte rdf:resource="&untitled-ontology-7;Ben_Arous"/>
+        <untitled-ontology-7:organiseEvenement rdf:resource="&untitled-ontology-7;Clean_Days_Journée_Collecte_Déchets"/>
+        <untitled-ontology-7:organiseEvenement rdf:resource="&untitled-ontology-7;Collecte_Déchets_Encombrants_Végétaux"/>
+        <untitled-ontology-7:créeComptePour rdf:resource="&untitled-ontology-7;Collection_Center_Admin_01"/>
+        <untitled-ontology-7:créeComptePour rdf:resource="&untitled-ontology-7;Collection_Center_Admin_02"/>
+        <untitled-ontology-7:créeComptePour rdf:resource="&untitled-ontology-7;Collection_Center_Admin_03"/>
+        <untitled-ontology-7:organiseEvenement rdf:resource="&untitled-ontology-7;Festival_Zéro_Déchet_65"/>
+        <untitled-ontology-7:gèreZoneCollecte rdf:resource="&untitled-ontology-7;Manouba"/>
+        <untitled-ontology-7:gèreZoneCollecte rdf:resource="&untitled-ontology-7;Raoued"/>
+        <untitled-ontology-7:créeComptePour rdf:resource="&untitled-ontology-7;Recycling_Center_Admin_01"/>
+        <untitled-ontology-7:créeComptePour rdf:resource="&untitled-ontology-7;Recycling_Center_Admin_02"/>
+        <untitled-ontology-7:créeComptePour rdf:resource="&untitled-ontology-7;Recycling_Center_Admin_03"/>
+        <untitled-ontology-7:organiseEvenement rdf:resource="&untitled-ontology-7;Tri_Sélectif_Porte_à_Porte"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/arfao/ontologies/2024/8/untitled-ontology-7#Alimentaires -->
+
+    <NamedIndividual rdf:about="&untitled-ontology-7;Alimentaires">
+        <rdf:type rdf:resource="&untitled-ontology-7;TypeDechet"/>
+        <untitled-ontology-7:recyclable>Oui</untitled-ontology-7:recyclable>
+        <untitled-ontology-7:description>Les déchets alimentaires représentent les restes de nourriture non consommés et les résidus de préparation, qui peuvent être compostés pour enrichir les sols ou valorisés en énergie biomasse.</untitled-ontology-7:description>
+        <untitled-ontology-7:nom>Alimentaires</untitled-ontology-7:nom>
+        <untitled-ontology-7:dangereux>Non</untitled-ontology-7:dangereux>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/arfao/ontologies/2024/8/untitled-ontology-7#Ariana -->
+
+    <NamedIndividual rdf:about="&untitled-ontology-7;Ariana">
+        <rdf:type rdf:resource="&untitled-ontology-7;ZoneCollecte"/>
+        <untitled-ontology-7:adresse>Ariana, Tunisie</untitled-ontology-7:adresse>
+        <untitled-ontology-7:nom>Ariana</untitled-ontology-7:nom>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/arfao/ontologies/2024/8/untitled-ontology-7#Batteries_usagées -->
+
+    <NamedIndividual rdf:about="&untitled-ontology-7;Batteries_usagées">
+        <rdf:type rdf:resource="&untitled-ontology-7;Dechet"/>
+        <untitled-ontology-7:nom>Batteries usagées</untitled-ontology-7:nom>
+        <untitled-ontology-7:quantite>1500</untitled-ontology-7:quantite>
+        <untitled-ontology-7:estCollectePar rdf:resource="&untitled-ontology-7;Centre_Collecte_01"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/arfao/ontologies/2024/8/untitled-ontology-7#Ben_Arous -->
+
+    <NamedIndividual rdf:about="&untitled-ontology-7;Ben_Arous">
+        <rdf:type rdf:resource="&untitled-ontology-7;ZoneCollecte"/>
+        <untitled-ontology-7:adresse>Ben Arous, Tunisie</untitled-ontology-7:adresse>
+        <untitled-ontology-7:nom>Ben Arous</untitled-ontology-7:nom>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/arfao/ontologies/2024/8/untitled-ontology-7#Bien_que_l&apos;événement_ait_commencé_en_retard,_les_discussions_et_les_activités_étaient_très_utiles_et_éducatives -->
+
+    <NamedIndividual rdf:about="&untitled-ontology-7;Bien_que_l&apos;événement_ait_commencé_en_retard,_les_discussions_et_les_activités_étaient_très_utiles_et_éducatives">
+        <rdf:type rdf:resource="&untitled-ontology-7;Commentaire"/>
+        <untitled-ontology-7:description>Bien que l&apos;événement ait commencé en retard, les discussions et les activités étaient très utiles et éducatives.</untitled-ontology-7:description>
+        <untitled-ontology-7:email>sarra@gmail.com</untitled-ontology-7:email>
+        <untitled-ontology-7:faitCommentaireSur rdf:resource="&untitled-ontology-7;Clean_Days_Journée_Collecte_Déchets"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/arfao/ontologies/2024/8/untitled-ontology-7#Bouteilles_de_vin -->
+
+    <NamedIndividual rdf:about="&untitled-ontology-7;Bouteilles_de_vin">
+        <rdf:type rdf:resource="&untitled-ontology-7;Dechet"/>
+        <untitled-ontology-7:quantite>1000</untitled-ontology-7:quantite>
+        <untitled-ontology-7:nom>Bouteilles de vin</untitled-ontology-7:nom>
+        <untitled-ontology-7:estCollectePar rdf:resource="&untitled-ontology-7;Centre_Collecte_02"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/arfao/ontologies/2024/8/untitled-ontology-7#Bouteilles_en_plastique_transparent -->
+
+    <NamedIndividual rdf:about="&untitled-ontology-7;Bouteilles_en_plastique_transparent">
+        <rdf:type rdf:resource="&untitled-ontology-7;Dechet"/>
+        <untitled-ontology-7:quantite>5000</untitled-ontology-7:quantite>
+        <untitled-ontology-7:nom>Bouteilles en plastique transparent</untitled-ontology-7:nom>
+        <untitled-ontology-7:estCollectePar rdf:resource="&untitled-ontology-7;Centre_Collecte_03"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/arfao/ontologies/2024/8/untitled-ontology-7#Canettes_de_soda -->
+
+    <NamedIndividual rdf:about="&untitled-ontology-7;Canettes_de_soda">
+        <rdf:type rdf:resource="&untitled-ontology-7;Dechet"/>
+        <untitled-ontology-7:quantite>4000</untitled-ontology-7:quantite>
+        <untitled-ontology-7:nom>Canettes de soda</untitled-ontology-7:nom>
+        <untitled-ontology-7:estCollectePar rdf:resource="&untitled-ontology-7;Centre_Collecte_01"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/arfao/ontologies/2024/8/untitled-ontology-7#Centre_Collecte_01 -->
+
+    <NamedIndividual rdf:about="&untitled-ontology-7;Centre_Collecte_01">
+        <rdf:type rdf:resource="&untitled-ontology-7;CentreCollecte"/>
+        <untitled-ontology-7:adresse>Cité Monji Slim, Ariana, Tunisie</untitled-ontology-7:adresse>
+        <untitled-ontology-7:nom>Centre Collecte 01</untitled-ontology-7:nom>
+        <untitled-ontology-7:capacite>2000000</untitled-ontology-7:capacite>
+        <untitled-ontology-7:localiseDans rdf:resource="&untitled-ontology-7;Ariana"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/arfao/ontologies/2024/8/untitled-ontology-7#Centre_Collecte_02 -->
+
+    <NamedIndividual rdf:about="&untitled-ontology-7;Centre_Collecte_02">
+        <rdf:type rdf:resource="&untitled-ontology-7;CentreCollecte"/>
+        <untitled-ontology-7:capacite>4000000</untitled-ontology-7:capacite>
+        <untitled-ontology-7:adresse>Ben Arous, Tunisie</untitled-ontology-7:adresse>
+        <untitled-ontology-7:nom>Centre Collecte 02</untitled-ontology-7:nom>
+        <untitled-ontology-7:localiseDans rdf:resource="&untitled-ontology-7;Ben_Arous"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/arfao/ontologies/2024/8/untitled-ontology-7#Centre_Collecte_03 -->
+
+    <NamedIndividual rdf:about="&untitled-ontology-7;Centre_Collecte_03">
+        <rdf:type rdf:resource="&untitled-ontology-7;CentreCollecte"/>
+        <untitled-ontology-7:nom>Centre Collecte 03</untitled-ontology-7:nom>
+        <untitled-ontology-7:capacite>7000000</untitled-ontology-7:capacite>
+        <untitled-ontology-7:adresse>Cité El Amel, Manouba, Tunisie</untitled-ontology-7:adresse>
+        <untitled-ontology-7:localiseDans rdf:resource="&untitled-ontology-7;Manouba"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/arfao/ontologies/2024/8/untitled-ontology-7#Centre_Recyclage_01 -->
+
+    <NamedIndividual rdf:about="&untitled-ontology-7;Centre_Recyclage_01">
+        <rdf:type rdf:resource="&untitled-ontology-7;CentreRecyclage"/>
+        <untitled-ontology-7:nom>Centre Recyclage 01</untitled-ontology-7:nom>
+        <untitled-ontology-7:capacite>5000000</untitled-ontology-7:capacite>
+        <untitled-ontology-7:adresse>Cité el Khadhra, Manouba, Tunisie</untitled-ontology-7:adresse>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/arfao/ontologies/2024/8/untitled-ontology-7#Centre_Recyclage_02 -->
+
+    <NamedIndividual rdf:about="&untitled-ontology-7;Centre_Recyclage_02">
+        <rdf:type rdf:resource="&untitled-ontology-7;CentreRecyclage"/>
+        <untitled-ontology-7:adresse>Zone Industrielle El Mghira, Tunisie</untitled-ontology-7:adresse>
+        <untitled-ontology-7:nom>Centre Recyclage 02</untitled-ontology-7:nom>
+        <untitled-ontology-7:capacite>8000000</untitled-ontology-7:capacite>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/arfao/ontologies/2024/8/untitled-ontology-7#Centre_Recyclage_03 -->
+
+    <NamedIndividual rdf:about="&untitled-ontology-7;Centre_Recyclage_03">
+        <rdf:type rdf:resource="&untitled-ontology-7;CentreRecyclage"/>
+        <untitled-ontology-7:nom>Centre Recyclage 03</untitled-ontology-7:nom>
+        <untitled-ontology-7:adresse>Zone industriel ksar said, Tunisie</untitled-ontology-7:adresse>
+        <untitled-ontology-7:capacite>3000000</untitled-ontology-7:capacite>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/arfao/ontologies/2024/8/untitled-ontology-7#Clean_Days_Journée_Collecte_Déchets -->
+
+    <NamedIndividual rdf:about="&untitled-ontology-7;Clean_Days_Journée_Collecte_Déchets">
+        <rdf:type rdf:resource="&untitled-ontology-7;EvenementCommunautaire"/>
+        <untitled-ontology-7:nom>Clean Days Journée Collecte Déchets</untitled-ontology-7:nom>
+        <untitled-ontology-7:date>2024-11-18</untitled-ontology-7:date>
+        <untitled-ontology-7:description>Affiche pour une journée de collecte de déchets à Chalon-sur-Saône le 27 mars. Événement organisé pour sensibiliser et former des équipes à la collecte des déchets.</untitled-ontology-7:description>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/arfao/ontologies/2024/8/untitled-ontology-7#Collecte_Déchets_Encombrants_Végétaux -->
+
+    <NamedIndividual rdf:about="&untitled-ontology-7;Collecte_Déchets_Encombrants_Végétaux">
+        <rdf:type rdf:resource="&untitled-ontology-7;EvenementCommunautaire"/>
+        <untitled-ontology-7:nom>Collecte Déchets Encombrants Végétaux</untitled-ontology-7:nom>
+        <untitled-ontology-7:date>2024-12-11</untitled-ontology-7:date>
+        <untitled-ontology-7:description>Affiche annonçant un changement dans la collecte des encombrants et des végétaux à partir du 1er janvier, avec un nouveau service sur rendez-vous.</untitled-ontology-7:description>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/arfao/ontologies/2024/8/untitled-ontology-7#Collection_Center_Admin_01 -->
+
+    <NamedIndividual rdf:about="&untitled-ontology-7;Collection_Center_Admin_01">
+        <rdf:type rdf:resource="&untitled-ontology-7;AdminCentreCollecte"/>
+        <rdf:type rdf:resource="&untitled-ontology-7;User"/>
+        <untitled-ontology-7:password>admincc01</untitled-ontology-7:password>
+        <untitled-ontology-7:nom>Collection Center Admin 01</untitled-ontology-7:nom>
+        <untitled-ontology-7:telephone>96258147</untitled-ontology-7:telephone>
+        <untitled-ontology-7:email>admincc01@gmail.com</untitled-ontology-7:email>
+        <untitled-ontology-7:matricule>ACC-01</untitled-ontology-7:matricule>
+        <untitled-ontology-7:role>adminCentreCollecte</untitled-ontology-7:role>
+        <untitled-ontology-7:gèreTypeDechet rdf:resource="&untitled-ontology-7;Alimentaires"/>
+        <untitled-ontology-7:gèreDechet rdf:resource="&untitled-ontology-7;Batteries_usagées"/>
+        <untitled-ontology-7:gèreDechet rdf:resource="&untitled-ontology-7;Canettes_de_soda"/>
+        <untitled-ontology-7:gèreCentreCollecte rdf:resource="&untitled-ontology-7;Centre_Collecte_01"/>
+        <untitled-ontology-7:gèreTypeDechet rdf:resource="&untitled-ontology-7;Electroniques"/>
+        <untitled-ontology-7:gèreTypeDechet rdf:resource="&untitled-ontology-7;En_Verre"/>
+        <untitled-ontology-7:gèreTypeDechet rdf:resource="&untitled-ontology-7;Métalliques"/>
+        <untitled-ontology-7:gèreTypeDechet rdf:resource="&untitled-ontology-7;Papiers_et_cartons"/>
+        <untitled-ontology-7:gèreTypeDechet rdf:resource="&untitled-ontology-7;Plastiques"/>
+        <untitled-ontology-7:gèreTypeDechet rdf:resource="&untitled-ontology-7;Textiles"/>
+        <untitled-ontology-7:gèreDechet rdf:resource="&untitled-ontology-7;Vieux_objets_métalliques_contenant_du_fer"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/arfao/ontologies/2024/8/untitled-ontology-7#Collection_Center_Admin_02 -->
+
+    <NamedIndividual rdf:about="&untitled-ontology-7;Collection_Center_Admin_02">
+        <rdf:type rdf:resource="&untitled-ontology-7;AdminCentreCollecte"/>
+        <rdf:type rdf:resource="&untitled-ontology-7;User"/>
+        <untitled-ontology-7:nom>Collection Center Admin 02</untitled-ontology-7:nom>
+        <untitled-ontology-7:matricule>ACC-02</untitled-ontology-7:matricule>
+        <untitled-ontology-7:role>adminCentreCollecte</untitled-ontology-7:role>
+        <untitled-ontology-7:telephone>96258145</untitled-ontology-7:telephone>
+        <untitled-ontology-7:password>admincc02</untitled-ontology-7:password>
+        <untitled-ontology-7:email>admincc02@gmail.com</untitled-ontology-7:email>
+        <untitled-ontology-7:gèreTypeDechet rdf:resource="&untitled-ontology-7;Alimentaires"/>
+        <untitled-ontology-7:gèreDechet rdf:resource="&untitled-ontology-7;Bouteilles_de_vin"/>
+        <untitled-ontology-7:gèreCentreCollecte rdf:resource="&untitled-ontology-7;Centre_Collecte_02"/>
+        <untitled-ontology-7:gèreTypeDechet rdf:resource="&untitled-ontology-7;Electroniques"/>
+        <untitled-ontology-7:gèreTypeDechet rdf:resource="&untitled-ontology-7;En_Verre"/>
+        <untitled-ontology-7:gèreDechet rdf:resource="&untitled-ontology-7;Métal_Ferreux"/>
+        <untitled-ontology-7:gèreTypeDechet rdf:resource="&untitled-ontology-7;Métalliques"/>
+        <untitled-ontology-7:gèreTypeDechet rdf:resource="&untitled-ontology-7;Papiers_et_cartons"/>
+        <untitled-ontology-7:gèreTypeDechet rdf:resource="&untitled-ontology-7;Plastiques"/>
+        <untitled-ontology-7:gèreTypeDechet rdf:resource="&untitled-ontology-7;Textiles"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/arfao/ontologies/2024/8/untitled-ontology-7#Collection_Center_Admin_03 -->
+
+    <NamedIndividual rdf:about="&untitled-ontology-7;Collection_Center_Admin_03">
+        <rdf:type rdf:resource="&untitled-ontology-7;AdminCentreCollecte"/>
+        <rdf:type rdf:resource="&untitled-ontology-7;User"/>
+        <untitled-ontology-7:matricule>ACC-03</untitled-ontology-7:matricule>
+        <untitled-ontology-7:email>admincc03@gmail.com</untitled-ontology-7:email>
+        <untitled-ontology-7:role>adminCentreCollecte</untitled-ontology-7:role>
+        <untitled-ontology-7:telephone>96258140</untitled-ontology-7:telephone>
+        <untitled-ontology-7:password>admincc03</untitled-ontology-7:password>
+        <untitled-ontology-7:nom>Collection Center Admin 03</untitled-ontology-7:nom>
+        <untitled-ontology-7:gèreTypeDechet rdf:resource="&untitled-ontology-7;Alimentaires"/>
+        <untitled-ontology-7:gèreDechet rdf:resource="&untitled-ontology-7;Bouteilles_en_plastique_transparent"/>
+        <untitled-ontology-7:gèreCentreCollecte rdf:resource="&untitled-ontology-7;Centre_Collecte_03"/>
+        <untitled-ontology-7:gèreTypeDechet rdf:resource="&untitled-ontology-7;Electroniques"/>
+        <untitled-ontology-7:gèreTypeDechet rdf:resource="&untitled-ontology-7;En_Verre"/>
+        <untitled-ontology-7:gèreTypeDechet rdf:resource="&untitled-ontology-7;Métalliques"/>
+        <untitled-ontology-7:gèreTypeDechet rdf:resource="&untitled-ontology-7;Papiers_et_cartons"/>
+        <untitled-ontology-7:gèreTypeDechet rdf:resource="&untitled-ontology-7;Plastiques"/>
+        <untitled-ontology-7:gèreTypeDechet rdf:resource="&untitled-ontology-7;Textiles"/>
+        <untitled-ontology-7:gèreDechet rdf:resource="&untitled-ontology-7;Tissus_en_coton"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/arfao/ontologies/2024/8/untitled-ontology-7#Electroniques -->
+
+    <NamedIndividual rdf:about="&untitled-ontology-7;Electroniques">
+        <rdf:type rdf:resource="&untitled-ontology-7;TypeDechet"/>
+        <untitled-ontology-7:nom>Electroniques</untitled-ontology-7:nom>
+        <untitled-ontology-7:recyclable>Oui</untitled-ontology-7:recyclable>
+        <untitled-ontology-7:dangereux>Non</untitled-ontology-7:dangereux>
+        <untitled-ontology-7:description>Les déchets électroniques, comprenant des appareils obsolètes ou cassés tels que téléphones, ordinateurs et téléviseurs, posent des défis environnementaux significatifs mais offrent des opportunités de recyclage de matériaux précieux.</untitled-ontology-7:description>
+        <untitled-ontology-7:estTypeDechetDe rdf:resource="&untitled-ontology-7;Batteries_usagées"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/arfao/ontologies/2024/8/untitled-ontology-7#En_Verre -->
+
+    <NamedIndividual rdf:about="&untitled-ontology-7;En_Verre">
+        <rdf:type rdf:resource="&untitled-ontology-7;TypeDechet"/>
+        <untitled-ontology-7:recyclable>Oui</untitled-ontology-7:recyclable>
+        <untitled-ontology-7:dangereux>Non</untitled-ontology-7:dangereux>
+        <untitled-ontology-7:nom>En Verre</untitled-ontology-7:nom>
+        <untitled-ontology-7:description>Les déchets en verre, provenant principalement d&apos;emballages comme les bouteilles et les bocaux, sont entièrement recyclables et peuvent être refondus plusieurs fois sans perte de pureté ou de qualité.</untitled-ontology-7:description>
+        <untitled-ontology-7:estTypeDechetDe rdf:resource="&untitled-ontology-7;Bouteilles_de_vin"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/arfao/ontologies/2024/8/untitled-ontology-7#Engrais_naturel_fabriqué_à_partir_de_déchets_organiques_décomposés -->
+
+    <NamedIndividual rdf:about="&untitled-ontology-7;Engrais_naturel_fabriqué_à_partir_de_déchets_organiques_décomposés">
+        <rdf:type rdf:resource="&untitled-ontology-7;MatierePremiere"/>
+        <untitled-ontology-7:nom>Engrais naturel fabriqué à partir de déchets organiques décomposés</untitled-ontology-7:nom>
+        <untitled-ontology-7:quantite>10000</untitled-ontology-7:quantite>
+        <untitled-ontology-7:estProduitPar rdf:resource="&untitled-ontology-7;Centre_Recyclage_02"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/arfao/ontologies/2024/8/untitled-ontology-7#Excellente_initiative_pour_sensibiliser_à_la_gestion_des_déchets_alimentaires._Merci_pour_cet_événement_enrichissant -->
+
+    <NamedIndividual rdf:about="&untitled-ontology-7;Excellente_initiative_pour_sensibiliser_à_la_gestion_des_déchets_alimentaires._Merci_pour_cet_événement_enrichissant">
+        <rdf:type rdf:resource="&untitled-ontology-7;Commentaire"/>
+        <untitled-ontology-7:email>ahlem@gmail.com</untitled-ontology-7:email>
+        <untitled-ontology-7:description>Excellente initiative pour sensibiliser à la gestion des déchets alimentaires. Merci pour cet événement enrichissant.</untitled-ontology-7:description>
+        <untitled-ontology-7:faitCommentaireSur rdf:resource="&untitled-ontology-7;Collecte_Déchets_Encombrants_Végétaux"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/arfao/ontologies/2024/8/untitled-ontology-7#Festival_Zéro_Déchet_65 -->
+
+    <NamedIndividual rdf:about="&untitled-ontology-7;Festival_Zéro_Déchet_65">
+        <rdf:type rdf:resource="&untitled-ontology-7;EvenementCommunautaire"/>
+        <untitled-ontology-7:description>L&apos;événement est axé sur des activités liées au zéro déchet à travers le territoire. Le visuel coloré montre différentes personnes engagées dans des activités écologiques : une personne chevauchant un mégaphone géant, des individus jardinant, d&apos;autres dansant, et une personne à vélo. En arrière-plan, on peut voir des objets recyclables. L&apos;affiche indique également le site web pour plus d&apos;informations et est agrémentée de logos de partenaires, dont celui de SYMAT, suggérant un soutien institutionnel ou une collaboration.</untitled-ontology-7:description>
+        <untitled-ontology-7:date>2024-12-22</untitled-ontology-7:date>
+        <untitled-ontology-7:nom>Festival Zéro Déchet 65</untitled-ontology-7:nom>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/arfao/ontologies/2024/8/untitled-ontology-7#Granulés_de_plastique_recyclé -->
+
+    <NamedIndividual rdf:about="&untitled-ontology-7;Granulés_de_plastique_recyclé">
+        <rdf:type rdf:resource="&untitled-ontology-7;MatierePremiere"/>
+        <untitled-ontology-7:nom>Granulés de plastique recyclé</untitled-ontology-7:nom>
+        <untitled-ontology-7:quantite>12000</untitled-ontology-7:quantite>
+        <untitled-ontology-7:estProduitPar rdf:resource="&untitled-ontology-7;Centre_Recyclage_03"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/arfao/ontologies/2024/8/untitled-ontology-7#J&apos;espérais_plus_d&apos;ateliers_pratiques,_mais_dans_l&apos;ensemble,_c&apos;était_une_bonne_expérience -->
+
+    <NamedIndividual rdf:about="&untitled-ontology-7;J&apos;espérais_plus_d&apos;ateliers_pratiques,_mais_dans_l&apos;ensemble,_c&apos;était_une_bonne_expérience">
+        <rdf:type rdf:resource="&untitled-ontology-7;Commentaire"/>
+        <untitled-ontology-7:description>J&apos;espérais plus d&apos;ateliers pratiques, mais dans l&apos;ensemble, c&apos;était une bonne expérience.</untitled-ontology-7:description>
+        <untitled-ontology-7:email>hazar@gmail.com</untitled-ontology-7:email>
+        <untitled-ontology-7:faitCommentaireSur rdf:resource="&untitled-ontology-7;Festival_Zéro_Déchet_65"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/arfao/ontologies/2024/8/untitled-ontology-7#L&apos;événement_était_super!_Les_intervenants_étaient_très_compétents_et_accessibles -->
+
+    <NamedIndividual rdf:about="&untitled-ontology-7;L&apos;événement_était_super!_Les_intervenants_étaient_très_compétents_et_accessibles">
+        <rdf:type rdf:resource="&untitled-ontology-7;Commentaire"/>
+        <untitled-ontology-7:description>L&apos;événement était super! Les intervenants étaient très compétents et accessibles.</untitled-ontology-7:description>
+        <untitled-ontology-7:email>ahmed@gmail.com</untitled-ontology-7:email>
+        <untitled-ontology-7:faitCommentaireSur rdf:resource="&untitled-ontology-7;Festival_Zéro_Déchet_65"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/arfao/ontologies/2024/8/untitled-ontology-7#Manouba -->
+
+    <NamedIndividual rdf:about="&untitled-ontology-7;Manouba">
+        <rdf:type rdf:resource="&untitled-ontology-7;ZoneCollecte"/>
+        <untitled-ontology-7:adresse>Manouba, Tunisie</untitled-ontology-7:adresse>
+        <untitled-ontology-7:nom>Manouba</untitled-ontology-7:nom>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/arfao/ontologies/2024/8/untitled-ontology-7#Merci_pour_l&apos;événement -->
+
+    <NamedIndividual rdf:about="&untitled-ontology-7;Merci_pour_l&apos;événement">
+        <rdf:type rdf:resource="&untitled-ontology-7;Commentaire"/>
+        <untitled-ontology-7:email>samir@gmail.com</untitled-ontology-7:email>
+        <untitled-ontology-7:nom>Merci pour l&apos;événement</untitled-ontology-7:nom>
+        <untitled-ontology-7:faitCommentaireSur rdf:resource="&untitled-ontology-7;Tri_Sélectif_Porte_à_Porte"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/arfao/ontologies/2024/8/untitled-ontology-7#Métal_Ferreux -->
+
+    <NamedIndividual rdf:about="&untitled-ontology-7;Métal_Ferreux">
+        <rdf:type rdf:resource="&untitled-ontology-7;Dechet"/>
+        <untitled-ontology-7:nom>Métal Ferreux</untitled-ontology-7:nom>
+        <untitled-ontology-7:quantite>8000</untitled-ontology-7:quantite>
+        <untitled-ontology-7:estCollectePar rdf:resource="&untitled-ontology-7;Centre_Collecte_02"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/arfao/ontologies/2024/8/untitled-ontology-7#Métalliques -->
+
+    <NamedIndividual rdf:about="&untitled-ontology-7;Métalliques">
+        <rdf:type rdf:resource="&untitled-ontology-7;TypeDechet"/>
+        <untitled-ontology-7:description>Les déchets métalliques, hautement recyclables, permettent de diminuer l&apos;exploitation des ressources et les émissions de gaz à effet de serre.</untitled-ontology-7:description>
+        <untitled-ontology-7:recyclable>Oui</untitled-ontology-7:recyclable>
+        <untitled-ontology-7:dangereux>Non</untitled-ontology-7:dangereux>
+        <untitled-ontology-7:nom>Métalliques</untitled-ontology-7:nom>
+        <untitled-ontology-7:estTypeDechetDe rdf:resource="&untitled-ontology-7;Canettes_de_soda"/>
+        <untitled-ontology-7:estTypeDechetDe rdf:resource="&untitled-ontology-7;Métal_Ferreux"/>
+        <untitled-ontology-7:estTypeDechetDe rdf:resource="&untitled-ontology-7;Vieux_objets_métalliques_contenant_du_fer"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/arfao/ontologies/2024/8/untitled-ontology-7#Papiers_et_cartons -->
+
+    <NamedIndividual rdf:about="&untitled-ontology-7;Papiers_et_cartons">
+        <rdf:type rdf:resource="&untitled-ontology-7;TypeDechet"/>
+        <untitled-ontology-7:nom>Papiers et cartons</untitled-ontology-7:nom>
+        <untitled-ontology-7:description>Les déchets de papiers et cartons, issus principalement des emballages, journaux et documents divers, sont largement recyclables, contribuant à la réduction de la déforestation et à l&apos;économie des ressources naturelles.</untitled-ontology-7:description>
+        <untitled-ontology-7:dangereux>Non</untitled-ontology-7:dangereux>
+        <untitled-ontology-7:recyclable>Oui</untitled-ontology-7:recyclable>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/arfao/ontologies/2024/8/untitled-ontology-7#Pièces_récupérées_d&apos;appareils_électroniques_pour_la_réutilisation -->
+
+    <NamedIndividual rdf:about="&untitled-ontology-7;Pièces_récupérées_d&apos;appareils_électroniques_pour_la_réutilisation">
+        <rdf:type rdf:resource="&untitled-ontology-7;MatierePremiere"/>
+        <untitled-ontology-7:quantite>8000</untitled-ontology-7:quantite>
+        <untitled-ontology-7:nom>Pièces récupérées d&apos;appareils électroniques pour la réutilisation</untitled-ontology-7:nom>
+        <untitled-ontology-7:estProduitPar rdf:resource="&untitled-ontology-7;Centre_Recyclage_01"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/arfao/ontologies/2024/8/untitled-ontology-7#Plastiques -->
+
+    <NamedIndividual rdf:about="&untitled-ontology-7;Plastiques">
+        <rdf:type rdf:resource="&untitled-ontology-7;TypeDechet"/>
+        <untitled-ontology-7:description>Les déchets plastiques, issus de produits de consommation et d&apos;emballages, sont réputés pour leur persistance dans l&apos;environnement mais peuvent être recyclés pour réduire l&apos;impact écologique.</untitled-ontology-7:description>
+        <untitled-ontology-7:nom>Plastiques</untitled-ontology-7:nom>
+        <untitled-ontology-7:dangereux>Non</untitled-ontology-7:dangereux>
+        <untitled-ontology-7:recyclable>Oui</untitled-ontology-7:recyclable>
+        <untitled-ontology-7:estTypeDechetDe rdf:resource="&untitled-ontology-7;Bouteilles_en_plastique_transparent"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/arfao/ontologies/2024/8/untitled-ontology-7#Pâte_à_papier_recyclée -->
+
+    <NamedIndividual rdf:about="&untitled-ontology-7;Pâte_à_papier_recyclée">
+        <rdf:type rdf:resource="&untitled-ontology-7;MatierePremiere"/>
+        <untitled-ontology-7:quantite>9000</untitled-ontology-7:quantite>
+        <untitled-ontology-7:nom>Pâte à papier recyclée</untitled-ontology-7:nom>
+        <untitled-ontology-7:estProduitPar rdf:resource="&untitled-ontology-7;Centre_Recyclage_02"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/arfao/ontologies/2024/8/untitled-ontology-7#Raoued -->
+
+    <NamedIndividual rdf:about="&untitled-ontology-7;Raoued">
+        <rdf:type rdf:resource="&untitled-ontology-7;ZoneCollecte"/>
+        <untitled-ontology-7:adresse>Raoued, Ariana, Tunisie</untitled-ontology-7:adresse>
+        <untitled-ontology-7:nom>Raoued</untitled-ontology-7:nom>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/arfao/ontologies/2024/8/untitled-ontology-7#Recyclage_Métallique -->
+
+    <NamedIndividual rdf:about="&untitled-ontology-7;Recyclage_Métallique">
+        <rdf:type rdf:resource="&untitled-ontology-7;TypeRecyclage"/>
+        <untitled-ontology-7:nom>Recyclage Métallique</untitled-ontology-7:nom>
+        <untitled-ontology-7:description>Refusion des objets métalliques pour créer de nouveaux objets en métal.</untitled-ontology-7:description>
+        <untitled-ontology-7:estTypeRecyclageDe rdf:resource="&untitled-ontology-7;Acier_Recyclé"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/arfao/ontologies/2024/8/untitled-ontology-7#Recyclage_de_l&apos;Aluminium -->
+
+    <NamedIndividual rdf:about="&untitled-ontology-7;Recyclage_de_l&apos;Aluminium">
+        <rdf:type rdf:resource="&untitled-ontology-7;TypeRecyclage"/>
+        <untitled-ontology-7:nom>Recyclage de l&apos;Aluminium</untitled-ontology-7:nom>
+        <untitled-ontology-7:description>Refusion des canettes et objets en aluminium pour la fabrication de nouveaux produits.</untitled-ontology-7:description>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/arfao/ontologies/2024/8/untitled-ontology-7#Recyclage_des_Textiles -->
+
+    <NamedIndividual rdf:about="&untitled-ontology-7;Recyclage_des_Textiles">
+        <rdf:type rdf:resource="&untitled-ontology-7;TypeRecyclage"/>
+        <untitled-ontology-7:description>Réutilisation des vieux vêtements et tissus pour créer de nouveaux articles.</untitled-ontology-7:description>
+        <untitled-ontology-7:nom>Recyclage des Textiles</untitled-ontology-7:nom>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/arfao/ontologies/2024/8/untitled-ontology-7#Recyclage_du_Papier -->
+
+    <NamedIndividual rdf:about="&untitled-ontology-7;Recyclage_du_Papier">
+        <rdf:type rdf:resource="&untitled-ontology-7;TypeRecyclage"/>
+        <untitled-ontology-7:description>Traitement des vieux papiers pour fabriquer du papier ou du carton recyclé.</untitled-ontology-7:description>
+        <untitled-ontology-7:nom>Recyclage du Papier</untitled-ontology-7:nom>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/arfao/ontologies/2024/8/untitled-ontology-7#Recyclage_du_Plastique -->
+
+    <NamedIndividual rdf:about="&untitled-ontology-7;Recyclage_du_Plastique">
+        <rdf:type rdf:resource="&untitled-ontology-7;TypeRecyclage"/>
+        <untitled-ontology-7:description>Processus pour transformer le plastique usagé en nouveaux produits.</untitled-ontology-7:description>
+        <untitled-ontology-7:nom>Recyclage du Plastique</untitled-ontology-7:nom>
+        <untitled-ontology-7:estTypeRecyclageDe rdf:resource="&untitled-ontology-7;Granulés_de_plastique_recyclé"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/arfao/ontologies/2024/8/untitled-ontology-7#Recyclage_du_Verre -->
+
+    <NamedIndividual rdf:about="&untitled-ontology-7;Recyclage_du_Verre">
+        <rdf:type rdf:resource="&untitled-ontology-7;TypeRecyclage"/>
+        <untitled-ontology-7:nom>Recyclage du Verre</untitled-ontology-7:nom>
+        <untitled-ontology-7:description>Fusion des objets en verre pour créer de nouvelles bouteilles ou objets.</untitled-ontology-7:description>
+        <untitled-ontology-7:estTypeRecyclageDe rdf:resource="&untitled-ontology-7;Verre_fondu_et_réutilisé_pour_fabriquer_de_nouvelles_bouteilles_et_contenants"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/arfao/ontologies/2024/8/untitled-ontology-7#Recyclage_Électronique -->
+
+    <NamedIndividual rdf:about="&untitled-ontology-7;Recyclage_Électronique">
+        <rdf:type rdf:resource="&untitled-ontology-7;TypeRecyclage"/>
+        <untitled-ontology-7:description>Démonter les appareils pour récupérer et réutiliser les composants électroniques.</untitled-ontology-7:description>
+        <untitled-ontology-7:nom>Recyclage Électronique</untitled-ontology-7:nom>
+        <untitled-ontology-7:estTypeRecyclageDe rdf:resource="&untitled-ontology-7;Pièces_récupérées_d&apos;appareils_électroniques_pour_la_réutilisation"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/arfao/ontologies/2024/8/untitled-ontology-7#Recycling_Center_Admin_01 -->
+
+    <NamedIndividual rdf:about="&untitled-ontology-7;Recycling_Center_Admin_01">
+        <rdf:type rdf:resource="&untitled-ontology-7;AdminCentreRecyclage"/>
+        <rdf:type rdf:resource="&untitled-ontology-7;User"/>
+        <untitled-ontology-7:matricule>ACR-01</untitled-ontology-7:matricule>
+        <untitled-ontology-7:telephone>93258369</untitled-ontology-7:telephone>
+        <untitled-ontology-7:email>admincr01@gmail.com</untitled-ontology-7:email>
+        <untitled-ontology-7:role>adminCentreRecyclage</untitled-ontology-7:role>
+        <untitled-ontology-7:password>admincr01</untitled-ontology-7:password>
+        <untitled-ontology-7:nom>Recycling Center Admin 01</untitled-ontology-7:nom>
+        <untitled-ontology-7:gèreMatierePremiere rdf:resource="&untitled-ontology-7;Acier_Recyclé"/>
+        <untitled-ontology-7:gèreCentreRecyclage rdf:resource="&untitled-ontology-7;Centre_Recyclage_01"/>
+        <untitled-ontology-7:gèreMatierePremiere rdf:resource="&untitled-ontology-7;Pièces_récupérées_d&apos;appareils_électroniques_pour_la_réutilisation"/>
+        <untitled-ontology-7:gèreTypeRecyclage rdf:resource="&untitled-ontology-7;Recyclage_Métallique"/>
+        <untitled-ontology-7:gèreTypeRecyclage rdf:resource="&untitled-ontology-7;Recyclage_de_l&apos;Aluminium"/>
+        <untitled-ontology-7:gèreTypeRecyclage rdf:resource="&untitled-ontology-7;Recyclage_des_Textiles"/>
+        <untitled-ontology-7:gèreTypeRecyclage rdf:resource="&untitled-ontology-7;Recyclage_du_Papier"/>
+        <untitled-ontology-7:gèreTypeRecyclage rdf:resource="&untitled-ontology-7;Recyclage_du_Plastique"/>
+        <untitled-ontology-7:gèreTypeRecyclage rdf:resource="&untitled-ontology-7;Recyclage_du_Verre"/>
+        <untitled-ontology-7:gèreTypeRecyclage rdf:resource="&untitled-ontology-7;Recyclage_Électronique"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/arfao/ontologies/2024/8/untitled-ontology-7#Recycling_Center_Admin_02 -->
+
+    <NamedIndividual rdf:about="&untitled-ontology-7;Recycling_Center_Admin_02">
+        <rdf:type rdf:resource="&untitled-ontology-7;AdminCentreRecyclage"/>
+        <rdf:type rdf:resource="&untitled-ontology-7;User"/>
+        <untitled-ontology-7:email>admincr02@gmail.com</untitled-ontology-7:email>
+        <untitled-ontology-7:role>adminCentreRecyclage</untitled-ontology-7:role>
+        <untitled-ontology-7:matricule>ACR-02</untitled-ontology-7:matricule>
+        <untitled-ontology-7:nom>Recycling Center Admin 02</untitled-ontology-7:nom>
+        <untitled-ontology-7:telephone>93258360</untitled-ontology-7:telephone>
+        <untitled-ontology-7:password>admincr02</untitled-ontology-7:password>
+        <untitled-ontology-7:gèreCentreRecyclage rdf:resource="&untitled-ontology-7;Centre_Recyclage_02"/>
+        <untitled-ontology-7:gèreMatierePremiere rdf:resource="&untitled-ontology-7;Engrais_naturel_fabriqué_à_partir_de_déchets_organiques_décomposés"/>
+        <untitled-ontology-7:gèreMatierePremiere rdf:resource="&untitled-ontology-7;Pâte_à_papier_recyclée"/>
+        <untitled-ontology-7:gèreTypeRecyclage rdf:resource="&untitled-ontology-7;Recyclage_Métallique"/>
+        <untitled-ontology-7:gèreTypeRecyclage rdf:resource="&untitled-ontology-7;Recyclage_de_l&apos;Aluminium"/>
+        <untitled-ontology-7:gèreTypeRecyclage rdf:resource="&untitled-ontology-7;Recyclage_des_Textiles"/>
+        <untitled-ontology-7:gèreTypeRecyclage rdf:resource="&untitled-ontology-7;Recyclage_du_Papier"/>
+        <untitled-ontology-7:gèreTypeRecyclage rdf:resource="&untitled-ontology-7;Recyclage_du_Plastique"/>
+        <untitled-ontology-7:gèreTypeRecyclage rdf:resource="&untitled-ontology-7;Recyclage_du_Verre"/>
+        <untitled-ontology-7:gèreTypeRecyclage rdf:resource="&untitled-ontology-7;Recyclage_Électronique"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/arfao/ontologies/2024/8/untitled-ontology-7#Recycling_Center_Admin_03 -->
+
+    <NamedIndividual rdf:about="&untitled-ontology-7;Recycling_Center_Admin_03">
+        <rdf:type rdf:resource="&untitled-ontology-7;AdminCentreRecyclage"/>
+        <rdf:type rdf:resource="&untitled-ontology-7;User"/>
+        <untitled-ontology-7:matricule>ACR-03</untitled-ontology-7:matricule>
+        <untitled-ontology-7:role>adminCentreRecyclage</untitled-ontology-7:role>
+        <untitled-ontology-7:password>admincr03</untitled-ontology-7:password>
+        <untitled-ontology-7:nom>Recycling Center Admin 03</untitled-ontology-7:nom>
+        <untitled-ontology-7:email>admincr03@gmail.com</untitled-ontology-7:email>
+        <untitled-ontology-7:telephone>93258363</untitled-ontology-7:telephone>
+        <untitled-ontology-7:gèreCentreRecyclage rdf:resource="&untitled-ontology-7;Centre_Recyclage_03"/>
+        <untitled-ontology-7:gèreMatierePremiere rdf:resource="&untitled-ontology-7;Granulés_de_plastique_recyclé"/>
+        <untitled-ontology-7:gèreTypeRecyclage rdf:resource="&untitled-ontology-7;Recyclage_Métallique"/>
+        <untitled-ontology-7:gèreTypeRecyclage rdf:resource="&untitled-ontology-7;Recyclage_de_l&apos;Aluminium"/>
+        <untitled-ontology-7:gèreTypeRecyclage rdf:resource="&untitled-ontology-7;Recyclage_des_Textiles"/>
+        <untitled-ontology-7:gèreTypeRecyclage rdf:resource="&untitled-ontology-7;Recyclage_du_Papier"/>
+        <untitled-ontology-7:gèreTypeRecyclage rdf:resource="&untitled-ontology-7;Recyclage_du_Plastique"/>
+        <untitled-ontology-7:gèreTypeRecyclage rdf:resource="&untitled-ontology-7;Recyclage_du_Verre"/>
+        <untitled-ontology-7:gèreTypeRecyclage rdf:resource="&untitled-ontology-7;Recyclage_Électronique"/>
+        <untitled-ontology-7:gèreMatierePremiere rdf:resource="&untitled-ontology-7;Verre_fondu_et_réutilisé_pour_fabriquer_de_nouvelles_bouteilles_et_contenants"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/arfao/ontologies/2024/8/untitled-ontology-7#Textiles -->
+
+    <NamedIndividual rdf:about="&untitled-ontology-7;Textiles">
+        <rdf:type rdf:resource="&untitled-ontology-7;TypeDechet"/>
+        <untitled-ontology-7:dangereux>Non</untitled-ontology-7:dangereux>
+        <untitled-ontology-7:description>Les déchets textiles, incluant vêtements usés et tissus hors d&apos;usage, peuvent être recyclés ou réutilisés, réduisant ainsi l&apos;impact environnemental et la demande en nouvelles ressources.</untitled-ontology-7:description>
+        <untitled-ontology-7:recyclable>Oui</untitled-ontology-7:recyclable>
+        <untitled-ontology-7:nom>Textiles</untitled-ontology-7:nom>
+        <untitled-ontology-7:estTypeDechetDe rdf:resource="&untitled-ontology-7;Tissus_en_coton"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/arfao/ontologies/2024/8/untitled-ontology-7#Tissus_en_coton -->
+
+    <NamedIndividual rdf:about="&untitled-ontology-7;Tissus_en_coton">
+        <rdf:type rdf:resource="&untitled-ontology-7;Dechet"/>
+        <untitled-ontology-7:nom>Tissus en coton</untitled-ontology-7:nom>
+        <untitled-ontology-7:quantite>2500</untitled-ontology-7:quantite>
+        <untitled-ontology-7:estCollectePar rdf:resource="&untitled-ontology-7;Centre_Collecte_03"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/arfao/ontologies/2024/8/untitled-ontology-7#Tri_Sélectif_Porte_à_Porte -->
+
+    <NamedIndividual rdf:about="&untitled-ontology-7;Tri_Sélectif_Porte_à_Porte">
+        <rdf:type rdf:resource="&untitled-ontology-7;EvenementCommunautaire"/>
+        <untitled-ontology-7:description>Affiche pour la collecte des déchets triés en porte à porte à partir du 1er janvier 2025 dans les villes sœurs, avec un focus sur les emballages et papiers.</untitled-ontology-7:description>
+        <untitled-ontology-7:date>2025-02-08</untitled-ontology-7:date>
+        <untitled-ontology-7:nom>Tri Sélectif Porte à Porte</untitled-ontology-7:nom>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/arfao/ontologies/2024/8/untitled-ontology-7#Très_informatif_et_bien_organisé._J&apos;ai_beaucoup_appris_lors_de_cet_événement_sur_le_recyclage_des_déchets_électroniques -->
+
+    <NamedIndividual rdf:about="&untitled-ontology-7;Très_informatif_et_bien_organisé._J&apos;ai_beaucoup_appris_lors_de_cet_événement_sur_le_recyclage_des_déchets_électroniques">
+        <rdf:type rdf:resource="&untitled-ontology-7;Commentaire"/>
+        <untitled-ontology-7:email>ali@gmail.com</untitled-ontology-7:email>
+        <untitled-ontology-7:nom>Très informatif et bien organisé. J&apos;ai beaucoup appris lors de cet événement sur le recyclage des déchets électroniques.</untitled-ontology-7:nom>
+        <untitled-ontology-7:faitCommentaireSur rdf:resource="&untitled-ontology-7;Tri_Sélectif_Porte_à_Porte"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/arfao/ontologies/2024/8/untitled-ontology-7#Verre_fondu_et_réutilisé_pour_fabriquer_de_nouvelles_bouteilles_et_contenants -->
+
+    <NamedIndividual rdf:about="&untitled-ontology-7;Verre_fondu_et_réutilisé_pour_fabriquer_de_nouvelles_bouteilles_et_contenants">
+        <rdf:type rdf:resource="&untitled-ontology-7;MatierePremiere"/>
+        <untitled-ontology-7:quantite>15000</untitled-ontology-7:quantite>
+        <untitled-ontology-7:nom>Verre fondu et réutilisé pour fabriquer de nouvelles bouteilles et contenants</untitled-ontology-7:nom>
+        <untitled-ontology-7:estProduitPar rdf:resource="&untitled-ontology-7;Centre_Recyclage_03"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/arfao/ontologies/2024/8/untitled-ontology-7#Vieux_objets_métalliques_contenant_du_fer -->
+
+    <NamedIndividual rdf:about="&untitled-ontology-7;Vieux_objets_métalliques_contenant_du_fer">
+        <rdf:type rdf:resource="&untitled-ontology-7;Dechet"/>
+        <untitled-ontology-7:nom>Vieux objets métalliques contenant du fer</untitled-ontology-7:nom>
+        <untitled-ontology-7:quantite>3000</untitled-ontology-7:quantite>
+        <untitled-ontology-7:estCollectePar rdf:resource="&untitled-ontology-7;Centre_Collecte_01"/>
+    </NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.4.2) http://owlapi.sourceforge.net -->
+
