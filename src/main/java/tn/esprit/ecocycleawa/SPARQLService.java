@@ -5,17 +5,13 @@ import org.apache.jena.query.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.io.ByteArrayOutputStream;
-import java.io.UnsupportedEncodingException;
+import java.io.*;
 
 import org.apache.jena.update.*;
 
 import org.apache.jena.query.Dataset;
 import org.apache.jena.query.DatasetFactory;
 import org.springframework.core.io.ClassPathResource;
-
-import java.io.FileOutputStream;
-import java.io.OutputStream;
 
 @Service
 public class SPARQLService {
@@ -77,10 +73,73 @@ public class SPARQLService {
         saveModel();
     }
 
+    public void addAdminCentreRecyclage(String nom, String email, String password, String telephone, String matricule) {
+        // Création d'un URI propre à chaque AdminCentreRecyclage basé sur son nom
+        String cleanNom = nom.replace(" ", "_"); // Remplace les espaces par des underscores pour un URI valide
+        String adminCentreRecyclageUri = "http://www.semanticweb.org/arfao/ontologies/2024/8/untitled-ontology-7#" + cleanNom;
+
+        String queryString = "" +
+                "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\n" +
+                "PREFIX : <http://www.semanticweb.org/arfao/ontologies/2024/8/untitled-ontology-7#>\n" +
+                "INSERT DATA {\n" +
+                "  <" + adminCentreRecyclageUri + "> rdf:type :AdminCentreRecyclage ;\n" + // Utilisation de l'URI
+                "             :nom \"" + nom + "\" ;\n" +
+                "             :email \"" + email + "\" ;\n" +
+                "             :password \"" + password + "\" ;\n" +
+                "             :telephone \"" + telephone + "\" ;\n" +
+                "             :matricule \"" + matricule + "\" ;\n" +
+                "             :role \"adminCentreRecyclage\" .\n" +
+                "}";
+
+        UpdateRequest updateRequest = UpdateFactory.create(queryString);
+        // Conversion de OntModel en Dataset pour l'exécution
+        Dataset dataset = DatasetFactory.create(model);
+        UpdateProcessor updateProcessor = UpdateExecutionFactory.create(updateRequest, dataset);
+        updateProcessor.execute();
+
+        // Sauvegarder le modèle modifié dans le fichier
+        saveModel();
+    }
+
+    public void addAndAssignRecyclingCenter(String adminMatricule, String centerName, int centerCapacite, String centerAddress) {
+        // Création d'un URI propre à chaque CentreRecyclage basé sur son nom
+        String cleanNom = centerName.replace(" ", "_");
+        String centreRecyclageUri = "http://www.semanticweb.org/arfao/ontologies/2024/8/untitled-ontology-7#" + cleanNom;
+
+        // Requête SPARQL pour ajouter et affecter le centre de recyclage
+        String queryString = "" +
+                "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\n" +
+                "PREFIX : <http://www.semanticweb.org/arfao/ontologies/2024/8/untitled-ontology-7#>\n" +
+                "INSERT DATA {\n" +
+                "  <" + centreRecyclageUri + "> rdf:type :CentreRecyclage ;\n" +
+                "             :nom \"" + centerName + "\" ;\n" +
+                "             :capacite " + centerCapacite + " ;\n" +
+                "             :adresse \"" + centerAddress + "\" .\n" +
+                "}\n" +
+                ";\n" +
+                "INSERT {\n" +
+                "  ?admin :gèreCentreRecyclage <" + centreRecyclageUri + "> .\n" +
+                "}\n" +
+                "WHERE {\n" +
+                "  ?admin rdf:type :AdminCentreRecyclage ;\n" +
+                "         :matricule \"" + adminMatricule + "\" .\n" +
+                "}";
+
+        System.out.println("Executing SPARQL Query: " + queryString);
+
+        UpdateRequest updateRequest = UpdateFactory.create(queryString);
+        // Conversion de OntModel en Dataset pour l'exécution
+        Dataset dataset = DatasetFactory.create(model);
+        UpdateProcessor updateProcessor = UpdateExecutionFactory.create(updateRequest, dataset);
+        updateProcessor.execute();
+
+        // Sauvegarder le modèle modifié dans le fichier
+        saveModel();
+    }
+
 
     private void saveModel() {
         try {
-            // Assurez-vous que le chemin d'accès est correct et que l'application a les droits d'écriture sur le fichier
             OutputStream out = new FileOutputStream(new ClassPathResource("static/ecocycle4.owl").getFile());
             model.write(out, "RDF/XML");
             out.close();
@@ -88,4 +147,5 @@ public class SPARQLService {
             e.printStackTrace();
         }
     }
+
 }

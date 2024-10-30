@@ -4,7 +4,6 @@
 <!DOCTYPE rdf:RDF [
     <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
     <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
-    <!ENTITY xml "http://www.w3.org/XML/1998/namespace" >
     <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
     <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
     <!ENTITY untitled-ontology-7 "http://www.semanticweb.org/arfao/ontologies/2024/8/untitled-ontology-7#" >
@@ -17,7 +16,6 @@
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-     xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:untitled-ontology-7="http://www.semanticweb.org/arfao/ontologies/2024/8/untitled-ontology-7#">
     <Ontology rdf:about="http://www.semanticweb.org/arfao/ontologies/2024/8/untitled-ontology-7"/>
     
@@ -254,6 +252,8 @@
         <rdfs:domain rdf:resource="&untitled-ontology-7;Admin"/>
         <rdfs:domain rdf:resource="&untitled-ontology-7;AdminCentreCollecte"/>
         <rdfs:domain rdf:resource="&untitled-ontology-7;AdminCentreRecyclage"/>
+        <rdfs:domain rdf:resource="&untitled-ontology-7;CentreCollecte"/>
+        <rdfs:domain rdf:resource="&untitled-ontology-7;CentreRecyclage"/>
         <rdfs:domain rdf:resource="&untitled-ontology-7;EvenementCommunautaire"/>
         <rdfs:domain rdf:resource="&untitled-ontology-7;MatierePremiere"/>
         <rdfs:domain rdf:resource="&untitled-ontology-7;TypeDechet"/>
@@ -328,13 +328,6 @@
         <equivalentClass>
             <Restriction>
                 <onProperty rdf:resource="&untitled-ontology-7;créeComptePour"/>
-                <onClass rdf:resource="&untitled-ontology-7;AdminCentreRecyclage"/>
-                <minQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</minQualifiedCardinality>
-            </Restriction>
-        </equivalentClass>
-        <equivalentClass>
-            <Restriction>
-                <onProperty rdf:resource="&untitled-ontology-7;créeComptePour"/>
                 <onClass rdf:resource="&untitled-ontology-7;AdminCentreCollecte"/>
                 <minQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</minQualifiedCardinality>
             </Restriction>
@@ -343,6 +336,13 @@
             <Restriction>
                 <onProperty rdf:resource="&untitled-ontology-7;organiseEvenement"/>
                 <onClass rdf:resource="&untitled-ontology-7;EvenementCommunautaire"/>
+                <minQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</minQualifiedCardinality>
+            </Restriction>
+        </equivalentClass>
+        <equivalentClass>
+            <Restriction>
+                <onProperty rdf:resource="&untitled-ontology-7;créeComptePour"/>
+                <onClass rdf:resource="&untitled-ontology-7;AdminCentreRecyclage"/>
                 <minQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</minQualifiedCardinality>
             </Restriction>
         </equivalentClass>
@@ -363,13 +363,6 @@
     <Class rdf:about="&untitled-ontology-7;AdminCentreCollecte">
         <equivalentClass>
             <Restriction>
-                <onProperty rdf:resource="&untitled-ontology-7;gèreCentreCollecte"/>
-                <onClass rdf:resource="&untitled-ontology-7;CentreCollecte"/>
-                <qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</qualifiedCardinality>
-            </Restriction>
-        </equivalentClass>
-        <equivalentClass>
-            <Restriction>
                 <onProperty rdf:resource="&untitled-ontology-7;gèreTypeDechet"/>
                 <onClass rdf:resource="&untitled-ontology-7;TypeDechet"/>
                 <minQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</minQualifiedCardinality>
@@ -382,6 +375,13 @@
                 <minQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</minQualifiedCardinality>
             </Restriction>
         </equivalentClass>
+        <equivalentClass>
+            <Restriction>
+                <onProperty rdf:resource="&untitled-ontology-7;gèreCentreCollecte"/>
+                <onClass rdf:resource="&untitled-ontology-7;CentreCollecte"/>
+                <qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</qualifiedCardinality>
+            </Restriction>
+        </equivalentClass>
         <rdfs:subClassOf rdf:resource="&untitled-ontology-7;User"/>
     </Class>
     
@@ -392,9 +392,9 @@
     <Class rdf:about="&untitled-ontology-7;AdminCentreRecyclage">
         <equivalentClass>
             <Restriction>
-                <onProperty rdf:resource="&untitled-ontology-7;gèreMatierePremiere"/>
-                <onClass rdf:resource="&untitled-ontology-7;MatierePremiere"/>
-                <minQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</minQualifiedCardinality>
+                <onProperty rdf:resource="&untitled-ontology-7;gèreCentreRecyclage"/>
+                <onClass rdf:resource="&untitled-ontology-7;CentreRecyclage"/>
+                <qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</qualifiedCardinality>
             </Restriction>
         </equivalentClass>
         <equivalentClass>
@@ -406,9 +406,9 @@
         </equivalentClass>
         <equivalentClass>
             <Restriction>
-                <onProperty rdf:resource="&untitled-ontology-7;gèreCentreRecyclage"/>
-                <onClass rdf:resource="&untitled-ontology-7;CentreRecyclage"/>
-                <qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</qualifiedCardinality>
+                <onProperty rdf:resource="&untitled-ontology-7;gèreMatierePremiere"/>
+                <onClass rdf:resource="&untitled-ontology-7;MatierePremiere"/>
+                <minQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</minQualifiedCardinality>
             </Restriction>
         </equivalentClass>
         <rdfs:subClassOf rdf:resource="&untitled-ontology-7;User"/>

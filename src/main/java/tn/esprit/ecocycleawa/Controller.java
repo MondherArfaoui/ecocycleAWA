@@ -1,12 +1,15 @@
 package tn.esprit.ecocycleawa;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.io.UnsupportedEncodingException;
 
 @RestController
+@CrossOrigin("*")
 @RequestMapping("/api")
 public class Controller {
     @Autowired
@@ -208,5 +211,44 @@ public class Controller {
             return "Erreur lors de la suppression de la Zone Collecte : " + e.getMessage();
         }
     }
+
+    @PostMapping("/addAdminCentreRecyclage")
+    public String addAdminCentreRecyclage(@RequestParam String nom, @RequestParam String email, @RequestParam String password, @RequestParam String telephone, @RequestParam String matricule) {
+        try {
+            sparqlService.addAdminCentreRecyclage(nom, email, password, telephone, matricule);
+            return "Admin Centre Recyclage ajouté avec succès";
+        } catch (Exception e) {
+            return "Erreur lors de l'ajout de l'Admin Centre Recyclage : " + e.getMessage();
+        }
+    }
+
+    @PostMapping("/addRecyclingCenterbyAdminCentreRecyclage")
+    public ResponseEntity<String> addRecyclingCenterbyAdminCentreRecyclage(
+            @RequestParam("adminMatricule") String adminMatricule,
+            @RequestParam("centerName") String centerName, // Assurez-vous que c'est bien le nom attendu dans la requête
+            @RequestParam("centerCapacite") int centerCapacite,
+            @RequestParam("centerAddress") String centerAddress) {
+
+        try {
+            sparqlService.addAndAssignRecyclingCenter(adminMatricule, centerName, centerCapacite, centerAddress);
+            return ResponseEntity.ok("Centre de recyclage ajouté avec succès");
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Erreur lors de l'ajout du centre de recyclage : " + e.getMessage());
+        }
+    }
+
+    @GetMapping("/getListRecyclingCenter")
+    public String getListRecyclingCenter() throws UnsupportedEncodingException {
+        String query = "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\n" +
+                "PREFIX : <http://www.semanticweb.org/arfao/ontologies/2024/8/untitled-ontology-7#>\n" +
+                "SELECT ?centreRecyclage ?nom\n" +
+                "WHERE {\n" +
+                "  ?centreRecyclage rdf:type :CentreRecyclage ;\n" +
+                "                :nom ?nom .\n" +
+                "}";
+        return sparqlService.executeSparqlQuery(query);
+    }
+
+
 
 }
