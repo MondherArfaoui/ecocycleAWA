@@ -264,6 +264,16 @@ public class Controller {
         }
     }
 
+//    @DeleteMapping("/deleteTypeRecyclage/{typeRecyclageName}")
+//    public String deleteTypeRecyclage(@PathVariable String typeRecyclageName) {
+//        try {
+//            sparqlService.deleteTypeRecyclage(typeRecyclageName);
+//            return "Type Recyclage supprimé avec succès";
+//        } catch (Exception e) {
+//            return "Erreur lors de la suppression du Type Recyclage : " + e.getMessage();
+//        }
+//    }
+
 //    @GetMapping("/getListRecyclingCenter")
 //    public String getListRecyclingCenter() throws UnsupportedEncodingException {
 //        String query = "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\n" +

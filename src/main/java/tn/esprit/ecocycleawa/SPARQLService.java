@@ -212,6 +212,31 @@ public class SPARQLService {
         saveModel();
     }
 
+    public void deleteTypeRecyclage(String typeRecyclageName) {
+        // Création d'un URI propre à chaque TypeRecyclage basé sur son nom pour s'assurer de cibler le bon élément
+        String cleanNom = typeRecyclageName.replace(" ", "_");
+        String typeRecyclageUri = "http://www.semanticweb.org/arfao/ontologies/2024/8/untitled-ontology-7#" + cleanNom;
+
+        // Requête SPARQL pour supprimer un TypeRecyclage spécifique
+        String queryString = "" +
+                "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\n" +
+                "PREFIX : <http://www.semanticweb.org/arfao/ontologies/2024/8/untitled-ontology-7#>\n" +
+                "DELETE WHERE {\n" +
+                "  <" + typeRecyclageUri + "> ?p ?o .\n" +  // Supprime toutes les triplets où le TypeRecyclage est le sujet
+                "}";
+
+        System.out.println("Executing SPARQL Query: " + queryString);
+
+        UpdateRequest updateRequest = UpdateFactory.create(queryString);
+        // Conversion de OntModel en Dataset pour l'exécution
+        Dataset dataset = DatasetFactory.create(model);
+        UpdateProcessor updateProcessor = UpdateExecutionFactory.create(updateRequest, dataset);
+        updateProcessor.execute();
+
+        // Sauvegarder le modèle modifié dans le fichier
+        saveModel();
+    }
+
 
     private void saveModel() {
         try {
