@@ -237,18 +237,59 @@ public class Controller {
         }
     }
 
-    @GetMapping("/getListRecyclingCenter")
-    public String getListRecyclingCenter() throws UnsupportedEncodingException {
-        String query = "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\n" +
-                "PREFIX : <http://www.semanticweb.org/arfao/ontologies/2024/8/untitled-ontology-7#>\n" +
-                "SELECT ?centreRecyclage ?nom\n" +
-                "WHERE {\n" +
-                "  ?centreRecyclage rdf:type :CentreRecyclage ;\n" +
-                "                :nom ?nom .\n" +
-                "}";
-        return sparqlService.executeSparqlQuery(query);
+    @PostMapping("/addMatierePremierebyAdminCentreRecyclage")
+    public ResponseEntity<String> addMatierePremierebyAdminCentreRecyclage(
+            @RequestParam("adminMatricule") String adminMatricule,
+            @RequestParam("matierePremiereName") String matierePremiereName,
+            @RequestParam("matierePremiereQuantite") int matierePremiereQuantite,
+            @RequestParam("typeRecyclageName") String typeRecyclageName) {
+        try {
+            sparqlService.addAndAssignMatierePremiere(adminMatricule, matierePremiereName, matierePremiereQuantite, typeRecyclageName);
+            return ResponseEntity.ok("Matière première ajoutée avec succès");
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Erreur lors de l'ajout de la matière première : " + e.getMessage());
+        }
     }
 
+    @PostMapping("/addTypeRecyclage")
+    public ResponseEntity<String> addTypeRecyclage(
+            @RequestParam("adminMatricule") String adminMatricule,
+            @RequestParam("typeRecyclageName") String typeRecyclageName, // Assurez-vous que c'est bien le nom attendu dans la requête
+            @RequestParam("typeRecyclageDescription") String typeRecyclageDescription) {
+        try {
+            sparqlService.addTypeRecyclage(adminMatricule, typeRecyclageName, typeRecyclageDescription);
+            return ResponseEntity.ok("Type Recyclage ajouté avec succès");
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Erreur lors de l'ajout du Type Recyclage : " + e.getMessage());
+        }
+    }
 
+//    @GetMapping("/getListRecyclingCenter")
+//    public String getListRecyclingCenter() throws UnsupportedEncodingException {
+//        String query = "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\n" +
+//                "PREFIX : <http://www.semanticweb.org/arfao/ontologies/2024/8/untitled-ontology-7#>\n" +
+//                "SELECT ?centreRecyclage ?nom\n" +
+//                "WHERE {\n" +
+//                "  ?centreRecyclage rdf:type :CentreRecyclage ;\n" +
+//                "                :nom ?nom .\n" +
+//                "}";
+//        return sparqlService.executeSparqlQuery(query);
+//    }
+//
+//    @GetMapping("/getListMatierePremiereByAdmin/{matricule}")
+//    public String getListMatierePremiereByAdmin(@PathVariable String matricule) throws UnsupportedEncodingException {
+//        String query = "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\n" +
+//                "PREFIX : <http://www.semanticweb.org/arfao/ontologies/2024/8/untitled-ontology-7#>\n" +
+//                "SELECT ?matierePremiere ?matierePremiereNom ?quantiteMatierePremiere ?typeRecyclageNom ?typeRecyclageDescription\n" +
+//                "WHERE {\n" +
+//                "  ?admin rdf:type :AdminCentreRecyclage ;\n" +
+//                "         :matricule ?adminMatricule ;\n" +
+//                "         :gèreMatierePremiere ?matierePremiere .\n" +
+//                "  ?matierePremiere :nom ?matierePremiereNom ;\n" +
+//                "                  :quantite ?quantiteMatierePremiere .\n" +
+//                "  FILTER(?adminMatricule = \"" + matricule + "\")\n" +
+//                "}";
+//        return sparqlService.executeSparqlQuery(query);
+//    }
 
 }

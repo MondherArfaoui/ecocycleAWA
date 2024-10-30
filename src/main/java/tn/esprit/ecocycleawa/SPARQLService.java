@@ -137,6 +137,81 @@ public class SPARQLService {
         saveModel();
     }
 
+    public void addAndAssignMatierePremiere(String adminMatricule, String matierePremiereName, int matierePremiereQuantite, String matierePremiereType) {
+        // Création d'un URI propre à chaque MatierePremiere basé sur son nom
+        String cleanNom = matierePremiereName.replace(" ", "_");
+        String matierePremiereUri = "http://www.semanticweb.org/arfao/ontologies/2024/8/untitled-ontology-7#" + cleanNom;
+
+        // URI pour le TypeRecyclage
+        String typeRecyclageUri = "http://www.semanticweb.org/arfao/ontologies/2024/8/untitled-ontology-7#" + matierePremiereType.replace(" ", "_");
+
+        // Requête SPARQL pour ajouter le MatierePremiere et son association TypeRecyclage
+        String queryString = "" +
+                "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\n" +
+                "PREFIX : <http://www.semanticweb.org/arfao/ontologies/2024/8/untitled-ontology-7#>\n" +
+                "INSERT DATA {\n" +
+                "  <" + matierePremiereUri + "> rdf:type :MatierePremiere ;\n" +
+                "             :nom \"" + matierePremiereName + "\" ;\n" +
+                "             :quantite \"" + matierePremiereQuantite + "\" .\n" +
+                "  <" + typeRecyclageUri + "> rdf:type :TypeRecyclage ;\n" +
+                "             :estTypeRecyclageDe <" + matierePremiereUri + "> .\n" +  // Correcte direction de la propriété
+                "}\n" +
+                ";\n" +
+                "INSERT {\n" +
+                "  ?admin :gèreMatierePremiere <" + matierePremiereUri + "> .\n" +
+                "}\n" +
+                "WHERE {\n" +
+                "  ?admin rdf:type :AdminCentreRecyclage ;\n" +
+                "         :matricule \"" + adminMatricule + "\" .\n" +
+                "}";
+
+        System.out.println("Executing SPARQL Query: " + queryString);
+
+        UpdateRequest updateRequest = UpdateFactory.create(queryString);
+        // Conversion de OntModel en Dataset pour l'exécution
+        Dataset dataset = DatasetFactory.create(model);
+        UpdateProcessor updateProcessor = UpdateExecutionFactory.create(updateRequest, dataset);
+        updateProcessor.execute();
+
+        // Sauvegarder le modèle modifié dans le fichier
+        saveModel();
+    }
+
+    public void addTypeRecyclage(String adminMatricule, String typeRecyclageName, String typeRecyclageDescription) {
+        // Create a URI for the new TypeRecyclage based on its name
+        String cleanTypeName = typeRecyclageName.replace(" ", "_");
+        String typeRecyclageUri = "http://www.semanticweb.org/arfao/ontologies/2024/8/untitled-ontology-7#" + cleanTypeName;
+
+        // SPARQL query to insert the new TypeRecyclage and assign it to the admin
+        String queryString = "" +
+                "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\n" +
+                "PREFIX : <http://www.semanticweb.org/arfao/ontologies/2024/8/untitled-ontology-7#>\n" +
+                "INSERT DATA {\n" +
+                "  <" + typeRecyclageUri + "> rdf:type :TypeRecyclage ;\n" +
+                "                           :nom \"" + typeRecyclageName + "\" ;\n" +
+                "                           :description \"" + typeRecyclageDescription + "\" .\n" +
+                "}\n" +
+                ";\n" +
+                "INSERT {\n" +
+                "  ?admin :gèreTypeRecyclage <" + typeRecyclageUri + "> .\n" +
+                "}\n" +
+                "WHERE {\n" +
+                "  ?admin rdf:type :AdminCentreRecyclage ;\n" +
+                "         :matricule \"" + adminMatricule + "\" .\n" +
+                "}";
+
+        System.out.println("Executing SPARQL Query: " + queryString);
+
+        UpdateRequest updateRequest = UpdateFactory.create(queryString);
+        // Execute the update query on the ontology model
+        Dataset dataset = DatasetFactory.create(model);
+        UpdateProcessor updateProcessor = UpdateExecutionFactory.create(updateRequest, dataset);
+        updateProcessor.execute();
+
+        // Save the updated model to the file
+        saveModel();
+    }
+
 
     private void saveModel() {
         try {
