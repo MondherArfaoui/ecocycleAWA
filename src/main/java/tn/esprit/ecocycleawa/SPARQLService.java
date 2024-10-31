@@ -33,7 +33,7 @@ public class SPARQLService {
 
     public void addZoneCollecte(String nom, String adresse) {
         // Création d'un URI propre à chaque ZoneCollecte basé sur son nom
-        String cleanNom = nom.replace(" ", "_"); // Remplace les espaces par des underscores pour un URI valide
+        String cleanNom = nom.replace(" ", "_");
         String zoneCollecteUri = "http://www.semanticweb.org/arfao/ontologies/2024/8/untitled-ontology-7#" + cleanNom;
 
         String queryString = "" +
@@ -64,7 +64,6 @@ public class SPARQLService {
                 "}";
 
         UpdateRequest updateRequest = UpdateFactory.create(queryString);
-        // Conversion de OntModel en Dataset pour l'exécution
         Dataset dataset = DatasetFactory.create(model);
         UpdateProcessor updateProcessor = UpdateExecutionFactory.create(updateRequest, dataset);
         updateProcessor.execute();
@@ -154,7 +153,7 @@ public class SPARQLService {
                 "             :nom \"" + matierePremiereName + "\" ;\n" +
                 "             :quantite \"" + matierePremiereQuantite + "\" .\n" +
                 "  <" + typeRecyclageUri + "> rdf:type :TypeRecyclage ;\n" +
-                "             :estTypeRecyclageDe <" + matierePremiereUri + "> .\n" +  // Correcte direction de la propriété
+                "             :estTypeRecyclageDe <" + matierePremiereUri + "> .\n" +
                 "}\n" +
                 ";\n" +
                 "INSERT {\n" +
@@ -212,30 +211,30 @@ public class SPARQLService {
         saveModel();
     }
 
-    public void deleteTypeRecyclage(String typeRecyclageName) {
-        // Création d'un URI propre à chaque TypeRecyclage basé sur son nom pour s'assurer de cibler le bon élément
-        String cleanNom = typeRecyclageName.replace(" ", "_");
-        String typeRecyclageUri = "http://www.semanticweb.org/arfao/ontologies/2024/8/untitled-ontology-7#" + cleanNom;
-
-        // Requête SPARQL pour supprimer un TypeRecyclage spécifique
-        String queryString = "" +
-                "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\n" +
-                "PREFIX : <http://www.semanticweb.org/arfao/ontologies/2024/8/untitled-ontology-7#>\n" +
-                "DELETE WHERE {\n" +
-                "  <" + typeRecyclageUri + "> ?p ?o .\n" +  // Supprime toutes les triplets où le TypeRecyclage est le sujet
-                "}";
-
-        System.out.println("Executing SPARQL Query: " + queryString);
-
-        UpdateRequest updateRequest = UpdateFactory.create(queryString);
-        // Conversion de OntModel en Dataset pour l'exécution
-        Dataset dataset = DatasetFactory.create(model);
-        UpdateProcessor updateProcessor = UpdateExecutionFactory.create(updateRequest, dataset);
-        updateProcessor.execute();
-
-        // Sauvegarder le modèle modifié dans le fichier
-        saveModel();
-    }
+//    public void deleteTypeRecyclage(String typeRecyclageName) {
+//        // Création d'un URI propre à chaque TypeRecyclage basé sur son nom pour s'assurer de cibler le bon élément
+//        String cleanNom = typeRecyclageName.replace(" ", "_");
+//        String typeRecyclageUri = "http://www.semanticweb.org/arfao/ontologies/2024/8/untitled-ontology-7#" + cleanNom;
+//
+//        // Requête SPARQL pour supprimer un TypeRecyclage spécifique
+//        String queryString = "" +
+//                "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\n" +
+//                "PREFIX : <http://www.semanticweb.org/arfao/ontologies/2024/8/untitled-ontology-7#>\n" +
+//                "DELETE WHERE {\n" +
+//                "  <" + typeRecyclageUri + "> ?p ?o .\n" +  // Supprime toutes les triplets où le TypeRecyclage est le sujet
+//                "}";
+//
+//        System.out.println("Executing SPARQL Query: " + queryString);
+//
+//        UpdateRequest updateRequest = UpdateFactory.create(queryString);
+//        // Conversion de OntModel en Dataset pour l'exécution
+//        Dataset dataset = DatasetFactory.create(model);
+//        UpdateProcessor updateProcessor = UpdateExecutionFactory.create(updateRequest, dataset);
+//        updateProcessor.execute();
+//
+//        // Sauvegarder le modèle modifié dans le fichier
+//        saveModel();
+//    }
 
 
     private void saveModel() {
